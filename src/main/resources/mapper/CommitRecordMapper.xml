@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nusture.mapper.CommitRecordMapper">
+    <select id="selectCommitRecord" resultType="com.nusture.pojo.CommitRecord">
+        select SUM(`count`) AS `count` ,create_time,family_code
+        FROM commit_record
+        where family_code = #{familyCode}
+        GROUP BY create_time
+        ORDER BY create_time
+    </select>
+</mapper>

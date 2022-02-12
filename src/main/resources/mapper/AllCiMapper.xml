@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nusture.mapper.AllCiMapper">
+<select id="selectAllCi" resultType="com.nusture.pojo.AllCi">
+    select sum(a.cost_money) as cost_money ,sum(a.income_money) as income_money,a.create_time
+    FROM (SELECT DISTINCT * FROM all_ci) a
+    where family_code = #{familyCode}
+    GROUP BY create_time
+    ORDER BY create_time
+    </select>
+</mapper>

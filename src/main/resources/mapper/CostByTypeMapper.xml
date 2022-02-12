@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nusture.mapper.CostByTypeMapper">
+    <select id="selectCostByType" resultType="com.nusture.pojo.CostByType">
+        select cost_money ,cost_type,user_id
+        FROM cost_by_type
+        where family_code = #{familyCode}
+        ORDER BY user_id
+    </select>
+</mapper>

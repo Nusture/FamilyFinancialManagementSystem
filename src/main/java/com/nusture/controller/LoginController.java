@@ -4,10 +4,12 @@ import cn.dev33.satoken.stp.SaLoginModel;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
 import com.nusture.pojo.User;
+import com.nusture.service.FamilyService;
 import com.nusture.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 
 @RestController
@@ -15,6 +17,8 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private FamilyService familyService;
     @PostMapping("doLogin")
     public SaResult doLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
         User user = userService.getUserByName(username);
@@ -42,6 +46,7 @@ public class LoginController {
     @PostMapping("doRegister")
     public SaResult doRegister(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("phone") String phone, @RequestParam("familyCode") String familyCode) {
         HashMap<String, String> map = new HashMap<>();
+        BigDecimal money = new BigDecimal(0);
         if (userService.getUserByName(username) == null) {
             User user = new User();
             user.setUsername(username);
@@ -51,6 +56,7 @@ public class LoginController {
             user.setVersion(1);
             user.setSignature("快来设置你的个性签名吧！");
             userService.registerUser(user);
+            familyService.addBaseMoney(familyCode,money);
             map.put("msg", "注册成功！");
             return SaResult.data(map);
         } else {

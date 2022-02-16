@@ -22,4 +22,6 @@ public interface FamilyService extends IService<Family> {
     Map<String,String> getMoneyByCode(String familyCode);
 
     int changeMoney(String familyCode, BigDecimal money);
+
+    int addBaseMoney(String familyCode, BigDecimal money);
 }

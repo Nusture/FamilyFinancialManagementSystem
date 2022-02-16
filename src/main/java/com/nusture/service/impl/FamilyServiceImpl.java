@@ -86,4 +86,13 @@ public class FamilyServiceImpl extends ServiceImpl<FamilyMapper, Family> impleme
         int i = mapper.update(family, wrapper2);
         return i;
     }
+
+    @Override
+    public int addBaseMoney(String familyCode, BigDecimal money) {
+        Family family = new Family();
+        family.setBaseMoney(money);
+        family.setFamilyCode(familyCode);
+        int i = mapper.insert(family);
+        return i;
+    }
 }

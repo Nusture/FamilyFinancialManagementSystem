@@ -24,11 +24,11 @@ public class SparkSql {
         //设置sparkSession数据连接
         Dataset dataSet = sparkSession.read()
                 .format("jdbc")
-                .option("url","jdbc:mysql://47.107.103.82:3306/ffms?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false")
+                .option("url","jdbc:mysql://localhost:3306/ffms?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false")
                 .option("dbtable",table)
                 .option("driver","com.mysql.cj.jdbc.Driver")
                 .option("user","root")
-                .option("password","989023Xbf")
+                .option("password","root")
                 .load();
         //注册临时表后才能进行select等操作，必需，否则not found in database 'default'
         dataSet.createOrReplaceTempView(table);
@@ -37,10 +37,10 @@ public class SparkSql {
     }
     public void save(Dataset<Row> dataset,String tableName){
 
-        String url = "jdbc:mysql://47.107.103.82:3306/ffms?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false";
+        String url = "jdbc:mysql://localhost:3306/ffms?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false";
         Properties connectionProperties = new Properties();
         connectionProperties.put("user","root");
-        connectionProperties.put("password","989023Xbf");
+        connectionProperties.put("password","root");
         connectionProperties.put("driver","com.mysql.cj.jdbc.Driver");
 
         dataset.write().mode("append").jdbc(url,tableName,connectionProperties);
@@ -48,10 +48,10 @@ public class SparkSql {
     }
     public void saveOverwrite(Dataset<Row> dataset,String tableName){
 
-        String url = "jdbc:mysql://47.107.103.82:3306/ffms?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false";
+        String url = "jdbc:mysql://localhost:3306/ffms?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false";
         Properties connectionProperties = new Properties();
         connectionProperties.put("user","root");
-        connectionProperties.put("password","989023Xbf");
+        connectionProperties.put("password","root");
         connectionProperties.put("driver","com.mysql.cj.jdbc.Driver");
 
         dataset.write().mode("overwrite").jdbc(url,tableName,connectionProperties);

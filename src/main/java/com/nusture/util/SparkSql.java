@@ -9,8 +9,8 @@ import java.util.Properties;
 
 public class SparkSql {
     static String url = "jdbc:mysql://localhost:3306/ffms?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false";
-    static String password = "989023Xbf";
     static String username = "root";
+    static String password = "root";
     public Dataset<Row> selectTable(String table, String sql){
         SparkConf conf = new SparkConf()
                 .set("spark.testing.memory","2147480000")

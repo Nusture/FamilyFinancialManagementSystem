@@ -10,9 +10,9 @@
 
 ### 项目演示
 
-前端项目`FamilyFinancialManagementSystem-vue`地址：https://github.com/Nusture/FamilyFinancialManagementSystem-vue
+后端项目`FamilyFinancialManagementSystem`地址：https://github.com/Nusture/FamilyFinancialManagementSystem
 
-项目演示地址： http://nusture.top:90/
+项目演示地址： https://miniapp.nusture.top/
 
 ![image-20220216210417453](https://typora-1300833172.cos.ap-guangzhou.myqcloud.com/Typora%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/image-20220216210417453.png)
 
@@ -72,6 +72,6 @@
 
 ## 有关问题
 
-Q：第一次进入首页提示网络延迟并且图表一直转圈
+Q：首次注册进入首页或者新增支出和收入之后提示网络延迟并且图表一直转圈怎么回事？
 
-A：这个时候只需要在支出管理或者收入管理新增一条支出或者收入记录就可以解决（可能首页图表不会立即刷新，需要几分钟之后才能刷新，这是因为使用了Spark算子所以有延迟）
+A：首次注册出现这个情况只需要在支出管理或者收入管理新增一条支出或者收入记录就可以解决（可能首页图表不会立即刷新，需要几分钟之后才能刷新，这是因为使用了Spark算子所以有延迟）

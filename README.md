@@ -10,7 +10,7 @@
 
 ### 项目演示
 
-后端项目`FamilyFinancialManagementSystem`地址：https://github.com/Nusture/FamilyFinancialManagementSystem
+前端项目`FamilyFinancialManagementSystem-vue`地址：https://github.com/Nusture/FamilyFinancialManagementSystem-vue
 
 项目演示地址： https://miniapp.nusture.top/
 

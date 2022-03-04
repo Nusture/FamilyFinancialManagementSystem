@@ -12,7 +12,7 @@
 
 前端项目`FamilyFinancialManagementSystem-vue`地址：https://github.com/Nusture/FamilyFinancialManagementSystem-vue
 
-项目演示地址： https://miniapp.nusture.top/
+项目演示地址： https://miniapp.clearlove7.wang/
 
 ![image-20220216210417453](https://typora-1300833172.cos.ap-guangzhou.myqcloud.com/Typora%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/image-20220216210417453.png)
 
